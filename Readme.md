@@ -29,9 +29,11 @@ Vagrant repository for environment setup and configuration CMS: Joomla! and/or W
 ## Versions
 
 - Joomla! CMS 5.0.3
+- WordPress CMS latest
 - PHP 8.1
 - MySQL 8.0
 - Nginx
+- Apache 2.4
 - Ubuntu 22.04
 
 ## Installation
