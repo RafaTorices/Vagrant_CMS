@@ -24,8 +24,8 @@ Vagrant.configure("2") do |config|
     vmachine.vm.provision "shell", path: "apache.sh"
     # vmachine.vm.provision "shell", path: "nginx.sh"
     # CMS ----> comment the one you don't want to use
-    # vmachine.vm.provision "shell", path: "joomla.sh"
-    vmachine.vm.provision "shell", path: "wordpress.sh"
+    vmachine.vm.provision "shell", path: "joomla.sh"
+    # vmachine.vm.provision "shell", path: "wordpress.sh"
     # Forwarded ports
     vmachine.vm.network "forwarded_port", guest: ENV['VAGRANT_PORT_GUEST'], host: ENV['VAGRANT_PORT_HOST']
   end
