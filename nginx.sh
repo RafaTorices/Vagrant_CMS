@@ -1,6 +1,5 @@
 #!/bin/bash
 # Config software and install
-
 # Update system
 apt-get update
 # Install nginx, mysql, php and mysql libraries

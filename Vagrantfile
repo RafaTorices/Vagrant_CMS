@@ -2,7 +2,9 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
+  # Enable environment
   config.env.enable
+  # Configuration for the VM
   config.vm.define "vmachine" do |vmachine|
     # Box Vagrant image to use
     vmachine.vm.box = ENV['VAGRANT_BOX']
@@ -10,8 +12,6 @@ Vagrant.configure("2") do |config|
     vmachine.vm.box_check_update = ENV['VAGRANT_BOX_CHECK_UPDATE']
     # Hostname vmachine
     vmachine.vm.hostname = ENV['VAGRANT_HOSTNAME']
-    # Network configuration private net
-    vmachine.vm.network "private_network", ip: "192.168.100.10", nic_type: "virtio", virtualbox__intnet: "sysadmin"
     # Resources and provider configuration
     vmachine.vm.provider ENV['VAGRANT_DEFAULT_PROVIDER'] do |vb|
       vb.name = ENV['VAGRANT_NAME']
@@ -19,10 +19,12 @@ Vagrant.configure("2") do |config|
       vb.cpus = ENV['VAGRANT_CPUS']
       vb.default_nic_type = ENV['VAGRANT_DEFAULT_NIC_TYPE']
     end
-    # Install software
-    #vmachine.vm.provision "shell", path: "webserver.sh"
-    #vmachine.vm.provision "shell", path: "software.sh"
+    # Provisioning
+    vmachine.vm.provision "shell", path: "test.sh"
+    # vmachine.vm.provision "shell", path: "apache.sh"
+    # vmachine.vm.provision "shell", path: "nginx.sh"
+    # vmachine.vm.provision "shell", path: "joomla.sh"
     # Forwarded ports
-    vmachine.vm.network "forwarded_port", guest: 80, host: 8000
+    vmachine.vm.network "forwarded_port", guest: ENV['VAGRANT_PORT_GUEST'], host: ENV['VAGRANT_PORT_HOST']
   end
 end

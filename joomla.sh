@@ -1,8 +1,9 @@
 #!/bin/bash
 # Joomla config
-
 # Upload environment variables
 source .env
+# Delete index.html file apache2
+rm /var/www/html/index.html
 # Download joomla and install
 wget https://downloads.joomla.org/cms/joomla5/5-0-3/Joomla_5-0-3-Stable-Full_Package.zip
 unzip Joomla_5-0-3-Stable-Full_Package.zip -d /var/www/html
