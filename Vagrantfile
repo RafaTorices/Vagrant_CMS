@@ -20,10 +20,9 @@ Vagrant.configure("2") do |config|
       vb.default_nic_type = ENV['VAGRANT_DEFAULT_NIC_TYPE']
     end
     # Provisioning
-    vmachine.vm.provision "shell", path: "test.sh"
-    # vmachine.vm.provision "shell", path: "apache.sh"
+    vmachine.vm.provision "shell", path: "apache.sh"
     # vmachine.vm.provision "shell", path: "nginx.sh"
-    # vmachine.vm.provision "shell", path: "joomla.sh"
+    vmachine.vm.provision "shell", path: "joomla.sh"
     # Forwarded ports
     vmachine.vm.network "forwarded_port", guest: ENV['VAGRANT_PORT_GUEST'], host: ENV['VAGRANT_PORT_HOST']
   end

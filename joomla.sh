@@ -1,7 +1,5 @@
 #!/bin/bash
 # Joomla config
-# Upload environment variables
-source .env
 # Delete index.html file apache2
 rm /var/www/html/index.html
 # Download joomla and install
