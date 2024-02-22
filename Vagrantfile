@@ -19,10 +19,13 @@ Vagrant.configure("2") do |config|
       vb.cpus = ENV['VAGRANT_CPUS']
       vb.default_nic_type = ENV['VAGRANT_DEFAULT_NIC_TYPE']
     end
-    # Provisioning
+    # Provisioning machine
+    # Web server ----> comment the one you don't want to use
     vmachine.vm.provision "shell", path: "apache.sh"
     # vmachine.vm.provision "shell", path: "nginx.sh"
-    vmachine.vm.provision "shell", path: "joomla.sh"
+    # CMS ----> comment the one you don't want to use
+    # vmachine.vm.provision "shell", path: "joomla.sh"
+    vmachine.vm.provision "shell", path: "wordpress.sh"
     # Forwarded ports
     vmachine.vm.network "forwarded_port", guest: ENV['VAGRANT_PORT_GUEST'], host: ENV['VAGRANT_PORT_HOST']
   end
