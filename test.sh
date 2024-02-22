@@ -1,5 +1,5 @@
 #!/bin/bash
 # Testing
 # Upload environment variables
-source .env
+. /vagrant/.env
 cat .env
