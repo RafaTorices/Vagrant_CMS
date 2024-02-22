@@ -1,4 +1,4 @@
-# Vagrant Joomla! CMS
+# Vagrant config machine CMS Webserver
 
 Vagrant repository for environment setup and configuration CMS: Joomla! and/or WordPress. Also, it includes apache and nginx as web servers.
 
