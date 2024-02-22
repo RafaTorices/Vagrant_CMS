@@ -41,6 +41,17 @@ Vagrant repository for environment setup and configuration CMS: Joomla! and/or W
 1. Clone the repository
 2. Run `vagrant up` to start the virtual machine
 3. Access the Joomla! CMS at [http://localhost:8000](http://localhost:8000)
+4. Follow the installation steps for Joomla! CMS or WordPress CMS
+
+## Commands
+
+- `vagrant up` to start the virtual machine
+- `vagrant halt` to stop the virtual machine
+- `vagrant destroy` to delete the virtual machine
+- `vagrant ssh` to access the virtual machine via SSH (In case of not working SSH access, use username: vagrant, password: vagrant)
+- `vagrant provision` to re-run the provisioning scripts
+- `vagrant reload` to restart the virtual machine
+- `vagrant status` to check the status of the virtual machine
 
 ## Author
 
