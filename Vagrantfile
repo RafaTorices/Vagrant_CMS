@@ -5,8 +5,8 @@ Vagrant.configure("2") do |config|
   # Enable environment
   config.env.enable
   config.ssh.insert_key = false
-  config.ssh.username = "vagrant"
-  config.ssh.password = "vagrant"
+  config.ssh.username = ENV['VAGRANT_USERNAME']
+  config.ssh.password = ENV['VAGRANT_PASSWORD']
   # Configuration for the VM
   config.vm.define "vmachine" do |vmachine|
     # Box Vagrant image to use
