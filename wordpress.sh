@@ -5,7 +5,7 @@ wget https://wordpress.org/latest.tar.gz
 # Delete the default html directory
 rm -rf /var/www/html
 # Uncompress the wordpress file
-tar -xzf latest.tar.gz -C /var/www/
+tar --skip-old-files -xzf latest.tar.gz -C /var/www/
 # Delete the wordpress file
 rm latest.tar.gz
 # Change the name of the wordpress directory to html
