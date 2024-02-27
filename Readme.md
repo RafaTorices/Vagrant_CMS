@@ -19,6 +19,10 @@ Vagrant repository for environment setup and configuration CMS: Joomla! and/or W
 3. Config file ```Vagrantfile``` with CMS configuration, Joomla! or WordPress, comment the line of the CMS that you don't want to use.
 4. Install the plugin ```vagrant plugin install vagrant-env``` to use the environment variables.
 
+## Persistent data app
+
+The data of the CMS is stored in the folder ```/var/www/html```. This folder is shared with the host machine, so the data is persistent in folder src.
+
 ## Requirements
 
 - [VirtualBox](https://www.virtualbox.org/)

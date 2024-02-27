@@ -15,6 +15,8 @@ Vagrant.configure("2") do |config|
     vmachine.vm.box_check_update = ENV['VAGRANT_BOX_CHECK_UPDATE']
     # Hostname vmachine
     vmachine.vm.hostname = ENV['VAGRANT_HOSTNAME']
+    # Synced folder to share files app between host and guest machine
+    vmachine.vm.synced_folder "./src", "/var/www/html", type: "virtualbox"
     # Resources and provider configuration
     vmachine.vm.provider ENV['VAGRANT_DEFAULT_PROVIDER'] do |vb|
       vb.name = ENV['VAGRANT_NAME']
